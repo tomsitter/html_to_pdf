@@ -1,0 +1,446 @@
+﻿
+	/*remove the header and footer that generate automatically... Print date and etc..*/
+	@page { margin: 0; }
+
+	/*force printing of background colours*/
+	@media print {
+		body {-webkit-print-color-adjust: exact;}
+	}
+
+	/*body default settings*/
+	body {
+		font-family: verdana;
+		font-size: 13px;
+		/*background: #EFF0ED;*/
+		background: #FFFFFF;
+	}
+
+
+	/*Container Divs for Page 1 and Page 2. Height and Width restricted to 8.5in x 11in */
+	.page {
+		display: block;
+		width: 8.4in; 
+		border-style: solid;
+		border-color: #fff;
+		border-width: 1px 1px 0px 1px;
+		background: #fff;
+		padding-bottom: 3px;
+	}
+
+	.new_page {
+		page-break-before: always;
+		padding-top: 30px;
+	
+	}
+
+	#logos_container {
+		width: 95%;
+		clear: both;
+		height: 60px;
+		padding: 20px;
+
+	}
+
+	#affiliate_logos {
+		float: right;
+	}
+
+	#logo {
+		float: left;
+		margin-top: 5px; /*To align the our logo with the other logos*/
+	}
+
+	#affiliate_logos ul, #logo ul {
+		margin: 0px;
+		list-style: none;
+		padding: 0px;
+	}
+
+	#affiliate_logos li, #logo li {
+		display: inline;
+		margin-left: 35px;
+	}
+
+	#affiliate_logos img, #logo img {
+		height: 70px;
+	}
+
+
+/*start of the content portion of the page*/
+	.content {
+		padding-left: 35px;
+	}
+
+	.content p {
+		padding-right: 35px;
+	}
+
+	.content h2 {
+		font-family: 'Roboto Condensed', sans-serif;
+		font-size: 28px;
+		margin-bottom: 0px;
+		text-align: center;
+
+	}
+
+	.content h3, .content h4 {
+		margin: 0px;
+		margin-top: 1px;
+		font-family: 'Fira Sans', sans-serif;
+		text-align: center;
+		color: red;
+		font-size: 17px;
+
+	}
+
+	.content h4 {
+		color: black;
+		text-align: left;
+		font-size: 20px;
+	}
+
+	.break {
+		clear: both;
+		width: 100%;
+		height: 2px;
+	}
+
+	.content p {
+		font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+		color: #333333;
+		font-size: 15px;
+	}
+
+
+	/*Report Information Box CSS */
+
+	#report_information {
+		float: right;
+		border: 3px solid #000;
+		width: 50%;
+		margin-right: 30px;
+		margin-top: 30px;
+	}
+
+	#report_information ul, #report_information ul ul {
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+		width: 100%;
+	}
+
+	#report_information ul li {
+		padding: 5px;
+		text-align: left;
+		border-bottom: 2px solid #000;
+		font-size: 12px;
+		padding-left: 25px;
+		line-height: 7px;
+	}
+
+	#report_information ul li:last-child {
+		border-bottom: 0px;
+	}
+
+	#report_information ul li:first-child {
+		background: #fcfced;
+		font-weight: bold;
+	}
+
+	#report_information ul ul li{
+		background: #fff;
+		font-weight: bold;
+		border: 0px;
+		padding-left: 0px;
+	}
+
+	#report_information ul ul li:first-child {
+		background: #fff;
+		font-weight: bold;
+	}
+
+
+	#report_information ul li:nth-child(3) ul li {
+		font-weight: normal;
+	}
+
+
+	/*utility Charges Table*/
+	#utility_rates, #rebates_table {
+		border: 3px solid #000;
+		width: 96%;
+		margin-right: 30px;
+		margin-top: 15px;
+	}
+
+	#utility_rates ul, #utility_rates ul ul, #rebates_table ul  {
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+		width: 100%;
+	}
+
+	#utility_rates ul li, #rebates_table ul li {
+		padding: 5px;
+		text-align: left;
+		border-bottom: 2px solid #000;
+		font-size: 12px;
+		padding-left: 25px;
+		line-height: 7px;
+	}
+
+	#utility_rates ul li:first-child, #utility_rates ul li:nth-child(5) {
+		background: #E2E8C3;
+		font-weight: bold;
+
+	}
+	
+	#utility_rates ul ul li:nth-child(5) {
+		font-weight: normal;
+	}
+
+	#utility_rates ul ul li {
+		background: #fff !important;
+	}
+
+	#utility_rates ul ul li:first-child, #utility_rates ul ul li:nth-child(6)  {
+		background: #fff;
+	}
+
+	/*4 column list for the utility Charges Table*/
+	.utility_4column_container, .subtotal_4column_container {
+			float:left;
+			width:100%;
+	}
+
+	.utility_4column_container_1stcol, .subtotal_1st_column {
+	    float:left;
+	    width:40%;
+	    overflow: hidden;
+	}
+
+
+	.utility_4column_container ul li:first-child  {
+		height: 40px;
+		color: #165994;
+		line-height: 13px !important;
+		border-bottom: 3px solid #333 !important;
+		margin-bottom: 13px !important;
+	}
+
+	.utility_4column_container ul li:nth-last-child(2), .utility_4column_container_2ndcol ul li:nth-last-child(1), .utility_4column_container_3rdcol ul li:nth-last-child(1)    {
+		font-weight: normal !important;
+	}
+
+	.utility_4column_container ul li, .subtotal_4column_container ul li {
+		border: 0px !important;
+	}
+
+	.subtotal_4column_container ul li:first-child {
+		color: green;
+	}
+
+
+	/*Styling for each of the columns */
+
+	.utility_4column_container_2ndcol, .subtotal_2nd_column {
+	    float:left;
+	    width:20%;
+	    overflow: hidden;
+	}
+
+	.utility_4column_container_3rdcol, .subtotal_3rd_column {
+	    float:left;
+	    width:20%;
+	    overflow: hidden;
+	}
+
+	.utility_4column_container_4thcol, .subtotal_4th_column {
+	    float:left;
+	    width:20%;
+	    overflow: hidden;
+
+	}
+
+	.utility_4column_container_4thcol ul li:not(:first-child):before, .subtotal_4th_column ul li:first-child:before  {
+		content:'$';
+	}
+
+	/*bold the + in the HST and make color red*/
+	.subtotal_4th_column ul li:nth-child(2):before  {
+		content:'+ $';
+	}
+
+	.subtotal_4th_column ul li:nth-child(2)::first-letter {
+		font-weight: bold;
+		color: red;
+	}
+
+	/*bold the - in OCE and make color green*/
+
+	.subtotal_4th_column ul li:nth-child(3):before  {
+		content:'- \00a0 $';
+	}
+
+	.subtotal_4th_column ul li:nth-child(3)::first-letter  {
+		font-weight: bold;
+		color: green;
+	}
+
+	/*utility table 2 column layout for Totals*/
+
+	.utility_total_container {
+		width: 101%;
+		height: 20px;
+		position: relative;
+		top:-6px;
+	}
+
+	.utility_total_left_column {
+		float: left;
+		width: 70%;
+		font-weight: bold;
+		color: #165994;
+		padding-top: 12px;
+		font-size: 14px;
+	}
+
+
+	.utility_total_right_column {
+		float: right;
+		width: 15%;
+		margin-right: 0px;
+		font-weight: bold;
+		color: #fff;
+		margin: 0px;
+		padding: 11px 10px 0px 4px;
+		background: #000 !important;
+		height: 20px;
+		text-align: center;
+		font-size: 13px; 
+		overflow: hidden;
+	}
+
+	.utility_total_right_column:before {
+		content:'$ ';
+	}
+
+	/*rebates table*/
+
+	#rebates_table ul li:first-child {
+			background: #fcfced;
+			height: 15px;
+			padding-top: 10px;
+	}
+
+	#rebates_table ul li:last-child {
+		border-bottom: 0px;
+		height: 20px;
+	}
+
+	#rebates_table .leftcolumn {
+		float: left;
+		width: 75%;
+
+	}
+
+	#rebates_table .centercolumn {
+		float: left;
+		width: 3%;
+		font-weight: bold;
+		overflow: hidden;
+		height: 14px;
+	}
+
+	#rebates_table .rightcolumn:before {
+		content:' $';
+	}
+
+	#rebates_table .rightcolumn {
+		float: left;
+		width: 19%;
+		font-weight: bold;
+
+	}
+
+	#rebates_table .lefttotal_rebate {
+
+		float: left;
+		font-weight: bold;
+		padding-top: 5px;
+		width: 64%;
+
+	}
+
+	#rebates_table .righttotal_rebate {
+		float: right;
+		background: #000;
+		padding: 12px;
+		text-align: center;
+		position: relative;
+		top: -5px;
+		right: -5px;
+		color: #fff;
+		font-size: 13px;
+		font-weight: bold;
+
+	}
+
+	#rebates_table .righttotal_rebate:before {
+		content:' $';
+	}
+
+
+	/*footer note for first page*/
+	.note {
+		font-size: 12px !important;
+	}
+
+
+	/*page 2 ul spacing*/
+	#page2 ul li {
+		line-height: 20px;
+		list-style: square;
+	}
+
+	/*footer*/
+	.footer {
+		width: 95%;
+		text-align: center !important;
+	}
+
+	.footer h3 {
+		font-size: 19px;
+		color: #333;
+	}
+
+	/*page_RTP table */
+	
+	#rtp_container {
+		width: 100%;
+	}
+	
+	#column_RTP_left_weekdays_heading, #column_RTP_right_weekends_heading {
+		background: #000;
+		color: #fff;
+		font-weight: bold;
+		padding: 5px;
+		text-align: center;
+		width: 100%;
+		float: left;
+		margin-right: 40px;
+		margin-top: 40px;
+		margin-bottom: 30px;
+		
+	}
+	
+	#column_left_RTP, #column_right_RTP {
+	  width: 360px;
+	  float: left;
+		
+	}
+	
+	#column_left_RTP {
+		margin-right: 20px;
+	}
+		

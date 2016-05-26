@@ -1,0 +1,231 @@
+<html>
+<meta charset="UTF-8">
+
+<head>
+	<title>Mock Bill</title>
+	<link href='https://fonts.googleapis.com/css?family=Fira+Sans:700|Roboto' rel='stylesheet' type='text/css'>
+	<link href='../css/style.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+	<div class="page">
+		<div id="logos_container">
+			<div id="logo">
+				<ul>
+					<li><img src= "../images/logo.png"/></li>
+				</ul>
+			</div>
+			<div id="affiliate_logos">
+				<ul>
+					<li><img src= "../images/affiliate1.png"/></li>
+					<li><img src= "../images/affiliate2.png"/></li>
+					<li><img src= "../images/affiliate3.png"/></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="content">
+
+			<h2>Monthly Cost and Rebate Report</h2>
+
+				<!-- Box containing Report Information Starts Here -->
+
+				<div id="report_information">
+					<ul>
+						<li>Report Date: __report_date</li> <!--First Row -->
+						<li>
+							<ul> <!--Second Row-->
+								<li>Customer ID: __customer_id</li>
+							</ul>
+
+
+						</li>
+						<li>
+							<ul> <!--Third row -->
+								<li>Customer Name: __customer_name</li>
+								<li>Report Period Start Date: __start_date</li>
+								<li>Report Period End Date: __end_date</li>
+
+							</ul>
+
+						</li>
+					</ul>
+
+				</div> 	<!-- Box containing Report Information ends Here -->
+
+			<div class="break"></div>
+
+			<h4>Charges:</h4>
+
+			<div id="utility_rates">
+				<ul>
+					<li>Utility Charges under Our Rate</li>
+					<li>
+						<div class="utility_4column_container">
+
+							<div class="utility_4column_container_1stcol"> 
+								<ul>
+									<li>Rate Structure</li>
+										<li>Off-Peak</li>
+										<li>Peak</li>
+								</ul>
+							</div>
+
+							<div class="utility_4column_container_2ndcol">
+								<ul>
+									<li>Usage in Report Period</li>
+										<li>__offpeak_usage</li>
+										<li>__onpeak_usage</li>
+								</ul>
+							</div>
+
+							<!-- These values were removed for this example -->
+							<div class="utility_4column_container_3rdcol"> 
+								<ul>
+									<li></li>
+										<li></li>
+										<li></li>
+								</ul>
+							</div>
+
+							<div class="utility_4column_container_4thcol"> 
+								<ul>
+									<li>Total Cost</li>
+										<li>__offpeak_cost</li>
+										<li>__onpeak_cost</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="break"></div>
+
+					</li>
+					
+					<li>
+
+						<!--Total Under Our Rate Section -->
+
+						<div class="utility_total_container">
+							<div class="utility_total_left_column">Total Under Our Rate</div>
+							<div class="utility_total_right_column">__final_cost</div>
+						</div>
+					</li>
+
+					<li>
+
+						<!--Total Under Current Rate Section -->
+
+						<div class="utility_total_container">
+							<div class="utility_total_left_column">Total Under Current Rate</div>
+							<div class="utility_total_right_column">__curr_rate</div>
+						</div>
+
+					</li>
+
+				</ul>
+			</div>
+
+
+			<div class="break"></div>
+
+			<br/>
+
+			<h4>Rebates:</h4>
+			<p>If the cost under our plan is less than your current cost, you will be credited with a positive rebate equivalent to the difference; otherwise, the rebate is zero. (At the end of each 6 month period, we will send you a cheque for the amount of your accumulated rebate).</p>
+
+			<div id="rebates_table">
+				<ul>
+					<li>
+						<div class="leftcolumn">
+							This period's cost was <strong>__rate_highlow</strong> than under your current rates by:
+						</div>
+
+						<div class="centercolumn">
+		
+						</div>
+					
+
+						<div class="rightcolumn">
+							__rate_difference
+						</div>
+
+
+						<div class="break"></div>
+					</li>
+					<li>
+						<br/>
+						<div class="leftcolumn">
+							This Month's Rebate:
+						</div>
+						<div class="centercolumn">
+							
+						</div>
+						<div class="rightcolumn">
+							 __rebate
+						</div>
+
+						<div class="break"></div>
+					</li>
+					<li>
+						<div class="lefttotal_rebate">
+							Cumulative Rebate Including this month's Rebate
+						</div>
+
+						<div class="righttotal_rebate">
+								__rebate_closing_balance
+						</div>
+					</li>
+
+				</ul>
+	
+			</div>
+			
+			<p class="note">Please see next page for important Notes and Rate Description</p>
+
+		</div>
+
+
+	</div>
+
+	<!--Page 2 of the Report -->
+
+	<div class="page new_page">
+		<div class="content">
+			
+			<h4>Notes:</h4>
+			<p>Although care has been taken to prepare this report, there may be small differences between your corresponding actual bill and the "Total under Current Rates" amount in this Report. Please notify us at <a href="mailto:placeholder@placeholder.ca">placeholder@example.ca</a> if the calculation discrepancy is significant.</p>
+
+			<br/>
+
+			<!--Our Rate Description.. Will Change for different treatments -->
+			<h4>Our Rate Description:</h4>
+			<strong><p>Our utility utility rates are:</p></strong>
+
+			<ul>
+				<li><i>This section has be removed for this example</i></li>
+			</ul>
+
+
+			<!--Months for winter hours-->
+			<p>Winter hours are in effect from <strong>October</strong> through <strong>April</strong>; Summer hours from <strong>May</strong> through <strong>September</strong>. </p>
+
+			<!--disclaimer -->
+			<p>Future rates will rise to reflect overall price increase in your current rate. (For example, if your current rates rise by <strong>2 percent</strong> in the future, all of the above rates will be go up by 2 percent.) </p>
+
+			<br/>
+			<!-- Footer -->
+			<div class="footer">
+				<h3> Questions? Contact us at <a href="mailto:placeholder@example.ca">placeholder@example.ca</a> </h3>
+				<span>Please include <strong>__customer_id</strong> in correspondence</span>
+		    </div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
