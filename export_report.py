@@ -2,7 +2,6 @@
 
 from __future__ import unicode_literals
 
-import codecs
 import os
 import pdb
 import sys
@@ -41,7 +40,8 @@ def export(bill, template_dir=None, pdf_dir=None):
 
     # get the path to the template
     template_path = os.path.join(template_dir, 'templates', 'template.html')
-    template = codecs.open(template_path, encoding='utf-8').read()
+    # read the template
+    template = open(template_path).read()
 
     # Replace relative imports of images and CSS with the full path to the files
     # Note: I'm including the '/' in the replacement so that
