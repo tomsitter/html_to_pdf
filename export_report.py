@@ -15,25 +15,38 @@ if sys.version_info > (3,):
     long = int
 
 
-def export(bill, basedir=None, pdfdir=None):
+def export(bill, template_dir=None, pdf_dir=None):
     """Takes bill dict and inserts fields into the appropriate HTML bill template
        The template is converted to a PDF using pdfkit and stored in new_bills/
     """
-    # get location of script
-    if not basedir:
+    # if template_dir not provided,
+    # look for the template directory of this script's location
+    if not template_dir:
+        template_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'template')
+    # If the user-defined or default template directories don't exist, raise an error
+    if not os.path.exists(template_dir):
+        raise OSError('Could not find the template directory')
+
+    # If no user-defined pdf output directory, put it in a folder where this script lives
+    if not pdf_dir:
         basedir = os.path.dirname(os.path.abspath(__file__))
+        pdf_dir = os.path.join(basedir, 'pdfs')
+        # if the default pdf output directory doesn't exist, make it
+        if not os.path.exists(pdf_dir):
+            os.makedirs(pdf_dir)
 
-    if not pdfdir:
-        pdfdir = os.path.join(basedir, 'pdfs')
+    # if the user-defined pdf_dir does not exist, raise an error
+    if not os.path.exists(pdf_dir):
+        raise IOError('Could not find a directory to output pdfs')
 
-    template_dir = os.path.join(basedir, 'template')
+    # get the path to the template
     template_path = os.path.join(template_dir, 'templates', 'template.html')
-
     template = codecs.open(template_path, encoding='utf-8').read()
 
-    # Remove relative imports of images
-
-    template = template.replace('..', path2url(template_dir))
+    # Replace relative imports of images and CSS with the full path to the files
+    # Note: I'm including the '/' in the replacement so that
+    # it doesn't replace other uses for '..' such as in regular text (i.e. an ellipsis)
+    template = template.replace('../', os.path.join(path2url(template_dir), ''))
 
     # Insert billing data using find/replace
     # Sort by field length longest to shortest
@@ -46,7 +59,7 @@ def export(bill, basedir=None, pdfdir=None):
     try:
         # options = {'encoding': 'utf-8'}
         report_name = make_report_name(bill)
-        output_file = os.path.join(pdfdir, report_name)
+        output_file = os.path.join(pdf_dir, report_name)
         pdfkit.from_string(template, output_file)
     except:
         typ, value, tb = sys.exc_info()
